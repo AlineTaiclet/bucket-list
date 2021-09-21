@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" >
+    <title>aboutus</title>
+</head>
+<body>
+<div class="container">
+    <br>
+    <h1><strong> Liste de personnes</strong></h1>
+    <br>
+    <table class="table table-striped">
+
+        <thead>
+        <tr>
+            <th>Prénom</th>
+            <th>Nom</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for t in tab %}
+
+            <tr>
+                <td>{{ t.prenom }}</td>
+                <td>{{ t.nom }}</td>
+            </tr>
+        {% endfor %}
+        <tbody>
+
+    </table>
+
+</div>
+</body>
+</html>

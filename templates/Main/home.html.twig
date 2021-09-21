@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+        <br>
+        <h1><strong> Liste de personnes</strong></h1>
+        <br>
+        <table class="table table-striped">
+
+            <thead>
+            <tr>
+                <th>Prénom</th>
+                <th>Nom</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {% for t in tab %}
+
+                <tr>
+                    <td>{{ t.prenom }}</td>
+                    <td>{{ t.nom }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+
+{% endblock %}

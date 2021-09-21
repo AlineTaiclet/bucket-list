@@ -1,0 +1,8 @@
+.logo {
+    filter: brightness(0.9);
+    -webkit-filter:brightness(0.9);
+}
+
+h1{
+    color: cadetblue;
+}
