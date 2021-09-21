@@ -1,8 +1,8 @@
 .logo {
-    filter: brightness(0.9);
-    -webkit-filter:brightness(0.9);
+    width: 30px;
+    filter: invert(99%) sepia(1%) saturate(7494%) hue-rotate(201deg) brightness(122%) contrast(94%);
 }
 
-h1{
+h1 {
     color: cadetblue;
 }

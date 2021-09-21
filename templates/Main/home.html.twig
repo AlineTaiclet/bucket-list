@@ -4,28 +4,42 @@
 
     <div class="container">
         <br>
-        <h1><strong> Liste de personnes</strong></h1>
+        <h1><strong>Wishes list !</strong></h1>
         <br>
         <table class="table table-striped">
 
             <thead>
             <tr>
-                <th>Prénom</th>
-                <th>Nom</th>
+                <th>Souhait</th>
+                <th>Détails</th>
+                <th>Pour qui ?</th>
+                <th>Date</th>
             </tr>
             </thead>
 
             <tbody>
-            {% for t in tab %}
+            {% for w in Wish %}
 
                 <tr>
-                    <td>{{ t.prenom }}</td>
-                    <td>{{ t.nom }}</td>
+                    <td>{{ getTitle(w) }}</td>
+                    <td>{{ getDescription(w) }}</td>
+                    <td>{{ getAuthor(w) }}</td>
+                    <td>{{ getDateCreated(w) }}</td>
                 </tr>
             {% endfor %}
-            </tbody>
+            <tbody>
 
         </table>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
     </div>
 
 {% endblock %}
