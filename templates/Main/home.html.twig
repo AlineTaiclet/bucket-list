@@ -12,19 +12,18 @@
             <tr>
                 <th>Souhait</th>
                 <th>Détails</th>
-                <th>Pour qui ?</th>
-                <th>Date</th>
+                <th>Pour?</th>
             </tr>
             </thead>
 
             <tbody>
-            {% for w in Wish %}
+            {% for w in wishes %}
 
                 <tr>
-                    <td>{{ getTitle(w) }}</td>
-                    <td>{{ getDescription(w) }}</td>
-                    <td>{{ getAuthor(w) }}</td>
-                    <td>{{ getDateCreated(w) }}</td>
+                    <td>{{w.title}}</td>
+                    <td>{{w.description}}</td>
+                    <td>{{w.author}}</td>
+                    <td> <a href="{{ path('details', {id: w.id}) }}" class="btn btn-outline-warning">Détails</a></td>
                 </tr>
             {% endfor %}
             <tbody>
