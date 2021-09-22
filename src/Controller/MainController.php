@@ -30,9 +30,8 @@ class MainController extends AbstractController
      */
     public function details(Wish $w): Response
     {
-        dd($w);
-        //$w = $repo-> findAll();
-        return $this->render('Main/home.html.twig',
+        $w = $repo-> findOneById($w);
+        return $this->render('Main/details.html.twig',
         ['wishes' => $w
         ]);
     }

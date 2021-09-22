@@ -4,14 +4,15 @@
 
     <div class="container">
         <br>
-        <h1><strong>Wishes list !</strong></h1>
+        <h1>{{w.title}}</h1>
         <br>
         <table class="table table-striped">
-
             <thead>
             <tr>
-                <th>Souhait</th>
-                <th>Pour?</th>
+                <th>Auteur</th>
+                <th>Date de création</th>
+                <th>Description du souhait</th>
+
             </tr>
             </thead>
 
@@ -19,9 +20,10 @@
             {% for w in wishes %}
 
                 <tr>
-                    <td>{{w.title}}</td>
                     <td>{{w.author}}</td>
-                    <td> <a href="{{ path('details', {id: w.id}) }}" class="btn btn-outline-warning">Détails</a></td>
+                    <td><em>{{w.dateCreated|date("y/m/Y H:i")}}</em></td>
+                    <td>{{w.description}}</td>
+
                 </tr>
             {% endfor %}
             <tbody>
