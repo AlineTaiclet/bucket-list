@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<h1> Ajout </h1>
+{{form_start(formWish)}}
+<div class="col-4">
+    {{form_widget(formWish)}}
+    <button type="submit" class="btn btn-outline-success">Valider</button>
+</div>
+{{form_end(formWish)}}
+
+{% endblock %}

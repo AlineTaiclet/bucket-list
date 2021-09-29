@@ -58,4 +58,36 @@ class MainController extends AbstractController
     {
         die('Contact');
     }
+
+    /**
+
+     * @Route("/ajout", name="ajout")
+
+     */
+    public function ajout(Request $request): Response
+    {
+        $wish = new wish();
+
+        //associe objet wish au form
+        $formWish = $this->createForm(WishType::class,$wish);
+
+        //hydrater wish
+        $formWish->handleRequest($request);
+
+        if($formWish->isSubmitted()){
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($wish);
+            $em->flush();
+
+            // je redirige
+            return $this->redirectToRoute('about');
+
+        }
+
+        return $this->render('main/ajout.html.twig',[
+            'formWish' => $formWish->createView()
+        ]);
+
+    }
 }
