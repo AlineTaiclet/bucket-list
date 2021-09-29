@@ -27,7 +27,11 @@
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{path('home')}}">Home</a></li>
                 <li class="nav-item"><a class="nav-link"                            href="{{path('home')}}">About</a></li>
                 <li class="nav-item"><a class="nav-link"                            href="{{path('home')}}">Contact</a></li>
-                <li class="nav-item"><a class="nav-link"                            href="{{path('home')}}">Services</a></li>
+                {% if app.user == null %}
+                <li class="nav-item"><a class="nav-link"                            href="{{path('app_login')}}">Se connecter</a></li>
+                {% else %}
+                <li class="nav-item"><a class="nav-link"                            href="{{path('app_logout')}}">Se déconnecter</a></li>
+                {% endif %}
             </ul>
         </div>
     </div>
