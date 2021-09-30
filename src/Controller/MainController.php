@@ -4,8 +4,10 @@
 namespace App\Controller;
 
 use App\Entity\Wish;
+use App\Form\WishType;
 use App\Repository\WishRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -28,12 +30,11 @@ class MainController extends AbstractController
     /**
      * @Route("/details/{id}", name="details")
      */
-    public function details(Wish $w): Response
+    public function details($id, WishRepository $repo ): Response
     {
-        $w = $repo-> findOneById($w);
-        return $this->render('Main/details.html.twig',
-        ['wishes' => $w
-        ]);
+        $w = new Wish();
+        $w = $repo-> findOneBy($id);
+        return $this->render('Main/details.html.twig', ['wishes' => $w]);
     }
 
     /**

@@ -2,12 +2,16 @@
 
 
 {% block body %}
-<h1> Ajout </h1>
-{{form_start(formWish)}}
-<div class="col-4">
-    {{form_widget(formWish)}}
-    <button type="submit" class="btn btn-outline-success">Valider</button>
-</div>
-{{form_end(formWish)}}
-
+    <div class="container">
+        <h1> Ajout </h1>
+        {{ form_start(formWish) }}
+        <div class="col-5">
+            {% if app.user != null %}
+            {{ form_row(formWish.author, {value:app.user.pseudo}) }}
+            {% endif %}
+            {{ form_widget(formWish) }}
+            <button type="submit" class="btn btn-outline-success mb-5">Valider</button>
+        </div>
+        {{ form_end(formWish) }}
+    </div>
 {% endblock %}
