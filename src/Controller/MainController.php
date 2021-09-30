@@ -62,7 +62,7 @@ class MainController extends AbstractController
 
     /**
 
-     * @Route("/ajout", name="ajout")
+     * @Route("/profile/ajout", name="ajout")
 
      */
     public function ajout(Request $request): Response
